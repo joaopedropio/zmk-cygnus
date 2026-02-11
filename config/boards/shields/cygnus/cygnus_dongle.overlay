@@ -26,3 +26,9 @@
         events = <0>;
     };
 };
+
+/ {  
+	chosen {  
+       zmk,backlight = &lcd_backlight;  
+    };  
+};

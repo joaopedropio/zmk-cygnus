@@ -8,6 +8,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/backlight.h>
 
 #define CMK 0
 #define QWT 1
@@ -263,8 +264,8 @@
             label = "SYSTEM";
             bindings = <
 &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4          &kp PSCRN  &kp F1  &kp F2   &kp F3   &kp F4 
-       &none         &none    &bt BT_CLR  &out OUT_TOG         &none          &to QWT    &kp F5  &kp F6   &kp F7   &kp F8 
-       &none         &none  &out OUT_USB  &out OUT_BLE         &none          &to CMK    &kp F9  &kp F10  &kp F11  &kp F12 
+&bl BL_SET 50   &bl BL_TOG    &bt BT_CLR  &out OUT_TOG         &none          &to QWT    &kp F5  &kp F6   &kp F7   &kp F8 
+  &bl BL_DEC    &bl BL_INC  &out OUT_USB  &out OUT_BLE         &none          &to CMK    &kp F9  &kp F10  &kp F11  &kp F12 
                                    &none          &none        &none          &none      &none   &none
             >;
         };
