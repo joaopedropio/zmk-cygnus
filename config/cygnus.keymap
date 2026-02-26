@@ -177,7 +177,7 @@
 &kp Q        &kp W         &kp F         &kp P          &kp B               &kp J             &kp L         &kp U        &kp Y        &kp SEMI
 &kp A        &kp R         &kp S         &kp T          &kp G               &kp M             &kp N         &kp E        &kp I           &kp O
 &kp Z        &kp X         &kp C         &kp D          &kp V               &kp K             &kp H     &kp COMMA      &kp DOT        &kp FSLH
-                           &lt SYS ESC &caps_word  &lt SBL SPACE       &lt NUM ENTER          &kp BSPC       &kp TAB
+                     &lt SYS ESC    &kp LSHIFT  &lt SBL SPACE       &lt NUM ENTER          &kp BSPC       &kp TAB
             >;
         };
 
@@ -199,7 +199,7 @@
 &kp Q        &kp W         &kp E         &kp R          &kp T               &kp Y             &kp U         &kp I        &kp O           &kp P
 &kp A        &kp S         &kp D         &kp F          &kp G               &kp H             &kp J         &kp K        &kp L        &kp SEMI
 &kp Z        &kp X         &kp C         &kp V          &kp B               &kp N             &kp M     &kp COMMA      &kp DOT        &kp FSLH
-                           &lt SYS ESC &kp LSHIFT  &lt SBL SPACE       &lt NUM ENTER          &kp BSPC       &kp TAB
+                     &lt SYS ESC    &kp LSHIFT  &lt SBL SPACE       &lt NUM ENTER          &kp BSPC       &kp TAB
             >;
         };
 
@@ -263,10 +263,10 @@
         system {
             label = "SYSTEM";
             bindings = <
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4          &kp PSCRN  &kp F1  &kp F2   &kp F3   &kp F4 
-&bl BL_SET 50   &bl BL_TOG    &bt BT_CLR  &out OUT_TOG         &none          &to QWT    &kp F5  &kp F6   &kp F7   &kp F8 
-  &bl BL_DEC    &bl BL_INC  &out OUT_USB  &out OUT_BLE         &none          &to CMK    &kp F9  &kp F10  &kp F11  &kp F12 
-                                   &none          &none        &none          &none      &none   &none
+ &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4          &kp PSCRN  &kp F1   &kp F2   &kp F3   &kp F4 
+&bl BL_SET 50    &bl BL_TOG    &bt BT_CLR  &out OUT_TOG         &none            &to QWT  &kp F5   &kp F6   &kp F7   &kp F8 
+   &bl BL_DEC    &bl BL_INC  &out OUT_USB  &out OUT_BLE         &none            &to CMK  &kp F9  &kp F10  &kp F11  &kp F12 
+                                    &none          &none        &none              &none   &none    &none
             >;
         };
     };
