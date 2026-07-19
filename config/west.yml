@@ -12,7 +12,8 @@ manifest:
       import: app/west.yml
     - name: snake-module
       remote: joaopedropio
-      revision: theme-loader
+      revision: master
+      # revision: theme-loader
       # revision: zephyr-4.1
   self:
     path: config
