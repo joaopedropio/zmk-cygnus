@@ -93,6 +93,20 @@
             timeout-ms = <COMBO_TIME_OUT>;
         };
 
+        combo_left_ctrl_alt {
+            bindings = <&kp LC(LALT)>;
+            key-positions = <11 12 13>;
+            timeout-ms = <COMBO_TIME_OUT>;
+            slow-release;
+        };
+
+        combo_right_ctrl_alt {
+            bindings = <&kp LC(LALT)>;
+            key-positions = <16 17 18>;
+            timeout-ms = <COMBO_TIME_OUT>;
+            slow-release;
+        };
+
         combo_left_quote {
             bindings = <&kp SQT>;
             key-positions = <2 3>;
