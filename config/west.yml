@@ -12,7 +12,7 @@ manifest:
       import: app/west.yml
     - name: zmk-pacman-module
       remote: joaopedropio
-      revision: main
+      revision: space-shooter
       # - name: snake-module
       #   remote: joaopedropio
       #   revision: master
