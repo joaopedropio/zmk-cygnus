@@ -4,8 +4,18 @@
 # nice_nano_v2 is now nice_nano@2.0.0/nrf52840/zmk.
 ---
 include:
+  # The dongle alone gets a console.  CONFIG_SHELL=y in cygnus_dongle.conf
+  # builds the `pacman` command and its profiles, but a shell with no backend
+  # is compiled in and unreachable - and it builds clean, so nothing says so.
+  # cdc-acm-console puts it on the USB the dongle is already plugged into,
+  # which is what the configurator page talks to.  That snippet also renames
+  # the device to "Zephyr USB console sample" and takes product id 0x0004, and
+  # it cannot be answered from a .conf: snippet config is merged last and wins.
+  # Hence the cmake args, which nothing is merged on top of.
   - board: nice_nano@2.0.0/nrf52840/zmk
     shield: cygnus_dongle pacman_adapter
+    snippet: cdc-acm-console
+    cmake-args: -DCONFIG_USB_DEVICE_PRODUCT='"Cygnus"' -DCONFIG_USB_DEVICE_PID=0x615E
     artifact-name: cygnus_dongle
   - board: nice_nano@2.0.0/nrf52840/zmk
     shield: cygnus_left
