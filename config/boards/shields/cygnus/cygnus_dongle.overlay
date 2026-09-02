@@ -1,9 +1,14 @@
 #include <dt-bindings/zmk/matrix_transform.h>
+#include "cygnus_layout.dtsi"
 
 / {
     chosen {
         zmk,kscan = &mock_kscan;
-        zmk,matrix-transform = &default_transform;
+        /* no zmk,matrix-transform chosen here on purpose - see cygnus.dtsi.
+         * ZMK Studio runs on the central, which is this dongle build, so this
+         * is the one of the three shields where the physical layout actually
+         * has to be reachable for Studio to show anything. */
+        zmk,physical-layout = &cygnus_layout;
     };
 
     default_transform: keymap_transform_0 {

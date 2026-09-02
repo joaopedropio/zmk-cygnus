@@ -1,0 +1,80 @@
+/*
+ * Copyright (c) 2026 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+/*
+ * ZMK Studio draws a keymap against a physical-layout node rather than
+ * against the matrix transform, so this is what makes the live editor show
+ * something shaped like Cygnus instead of a bare grid.
+ *
+ * Cygnus (https://github.com/juhakaup/keyboards/tree/main/Cygnus%20v1.0) is a
+ * concave, hand-wired dactyl build with no published key coordinates, but its
+ * own README says the matrix is deliberately wired the way a Corne's is - and
+ * this shape (three rows of five a side, columns staggered by finger length,
+ * three curved thumb keys) is the same one, one that already ships with ZMK
+ * as `foostan_corne_5col_layout`. So the thirty-six keys below are that
+ * board's, standing in for coordinates the case's own STLs never wrote down.
+ * The two-dimensional stagger is close enough for Studio's editor - it draws
+ * a plan of the keymap, not the concave well the keys actually sit in - and
+ * it can be nudged key by key later without touching anything that reads it.
+ *
+ * Order matches every matrix-transform's `map` in this shield: row 0 left
+ * five then row 0 right five, the same for rows 1 and 2, then the three left
+ * thumb keys and the three right, so position N here is keymap position N
+ * everywhere else in this directory.
+ */
+
+#include <physical_layouts.dtsi>
+
+/ {
+    cygnus_layout: cygnus_layout {
+        compatible = "zmk,physical-layout";
+        display-name = "Cygnus";
+        /* whichever shield includes this file has already defined its own
+         * default_transform - the dongle's is a stand-in for a kscan it
+         * hasn't got, the halves' is the real matrix, but both carry the
+         * same thirty-six positions in the same order this layout does */
+        transform = <&default_transform>;
+
+        keys  //                     w   h    x    y     rot    rx    ry
+            = <&key_physical_attrs 100 100    0   37       0     0     0>
+            , <&key_physical_attrs 100 100  100   12       0     0     0>
+            , <&key_physical_attrs 100 100  200    0       0     0     0>
+            , <&key_physical_attrs 100 100  300   12       0     0     0>
+            , <&key_physical_attrs 100 100  400   24       0     0     0>
+            , <&key_physical_attrs 100 100  700   24       0     0     0>
+            , <&key_physical_attrs 100 100  800   12       0     0     0>
+            , <&key_physical_attrs 100 100  900    0       0     0     0>
+            , <&key_physical_attrs 100 100 1000   12       0     0     0>
+            , <&key_physical_attrs 100 100 1100   37       0     0     0>
+            , <&key_physical_attrs 100 100    0  137       0     0     0>
+            , <&key_physical_attrs 100 100  100  112       0     0     0>
+            , <&key_physical_attrs 100 100  200  100       0     0     0>
+            , <&key_physical_attrs 100 100  300  112       0     0     0>
+            , <&key_physical_attrs 100 100  400  124       0     0     0>
+            , <&key_physical_attrs 100 100  700  124       0     0     0>
+            , <&key_physical_attrs 100 100  800  112       0     0     0>
+            , <&key_physical_attrs 100 100  900  100       0     0     0>
+            , <&key_physical_attrs 100 100 1000  112       0     0     0>
+            , <&key_physical_attrs 100 100 1100  137       0     0     0>
+            , <&key_physical_attrs 100 100    0  237       0     0     0>
+            , <&key_physical_attrs 100 100  100  212       0     0     0>
+            , <&key_physical_attrs 100 100  200  200       0     0     0>
+            , <&key_physical_attrs 100 100  300  212       0     0     0>
+            , <&key_physical_attrs 100 100  400  224       0     0     0>
+            , <&key_physical_attrs 100 100  700  224       0     0     0>
+            , <&key_physical_attrs 100 100  800  212       0     0     0>
+            , <&key_physical_attrs 100 100  900  200       0     0     0>
+            , <&key_physical_attrs 100 100 1000  212       0     0     0>
+            , <&key_physical_attrs 100 100 1100  237       0     0     0>
+            , <&key_physical_attrs 100 100  250  312       0     0     0>
+            , <&key_physical_attrs 100 100  350  312    1200   350   412>
+            , <&key_physical_attrs 100 150  448  283    2400   448   433>
+            , <&key_physical_attrs 100 150  652  283  (-2400)  752   433>
+            , <&key_physical_attrs 100 100  750  312  (-1200)  850   412>
+            , <&key_physical_attrs 100 100  850  312       0     0     0>
+        ;
+    };
+};

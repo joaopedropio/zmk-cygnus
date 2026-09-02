@@ -265,7 +265,7 @@
         ┏━━━━━━━━━┳━━━━━━━━━┳━━━━━━━━━┳━━━━━━━━━┳━━━━━━━━━┓          ┏━━━━━━━━━┳━━━━━━━━━┳━━━━━━━━━┳━━━━━━━━━┳━━━━━━━━━┓
         ┃  BT 1   ┃  BT 2   ┃  BT 3   ┃  BT 4   ┃  BT 5   ┃          ┃  PSCRN  ┃   F1    ┃   F2    ┃   F3    ┃   F4    ┃
         ┣━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┫          ┣━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┫
-        ┃         ┃         ┃  BT_CLR ┃ OUT_TOG ┃         ┃          ┃  QWRT   ┃   F5    ┃   F6    ┃   F7    ┃   F8    ┃
+        ┃         ┃         ┃  BT_CLR ┃ OUT_TOG ┃ STUDIO  ┃          ┃  QWRT   ┃   F5    ┃   F6    ┃   F7    ┃   F8    ┃
         ┣━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┫          ┣━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┫
         ┃         ┃         ┃ OUT_USB ┃ OUT_BLE ┃         ┃          ┃  CLMK   ┃   F9    ┃   F10   ┃   F11   ┃   F12   ┃
         ┗━━━━━━━━━┻━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┫          ┣━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┻━━━━━━━━━┛
@@ -277,10 +277,10 @@
         system {
             label = "SYSTEM";
             bindings = <
- &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4          &kp PSCRN  &kp F1   &kp F2   &kp F3   &kp F4 
-&bl BL_SET 50    &bl BL_TOG    &bt BT_CLR  &out OUT_TOG         &none            &to QWT  &kp F5   &kp F6   &kp F7   &kp F8 
-   &bl BL_DEC    &bl BL_INC  &out OUT_USB  &out OUT_BLE         &none            &to CMK  &kp F9  &kp F10  &kp F11  &kp F12 
-                                    &none          &none        &none              &none   &none    &none
+ &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3   &bt BT_SEL 4          &kp PSCRN  &kp F1   &kp F2   &kp F3   &kp F4
+&bl BL_SET 50    &bl BL_TOG    &bt BT_CLR  &out OUT_TOG &studio_unlock            &to QWT  &kp F5   &kp F6   &kp F7   &kp F8
+   &bl BL_DEC    &bl BL_INC  &out OUT_USB  &out OUT_BLE          &none            &to CMK  &kp F9  &kp F10  &kp F11  &kp F12
+                                    &none          &none         &none              &none   &none    &none
             >;
         };
     };

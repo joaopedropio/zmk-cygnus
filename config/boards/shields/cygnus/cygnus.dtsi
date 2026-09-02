@@ -5,11 +5,16 @@
  */
 
 #include <dt-bindings/zmk/matrix_transform.h>
+#include "cygnus_layout.dtsi"
 
 / {
     chosen {
         zmk,kscan = &kscan0;
-        zmk,matrix_transform = &default_transform;
+        /* no zmk,matrix_transform here on purpose: ZMK Studio's runtime
+         * physical-layout code (src/physical_layouts.c) only compiles in
+         * when that legacy chosen is gone, so default_transform is reached
+         * the one way now, through cygnus_layout's own `transform` property */
+        zmk,physical-layout = &cygnus_layout;
     };
 
     default_transform: keymap_transform_0 {
