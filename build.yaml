@@ -13,7 +13,7 @@ include:
   # it cannot be answered from a .conf: snippet config is merged last and wins.
   # Hence the cmake args, which nothing is merged on top of.
   - board: nice_nano@2.0.0/nrf52840/zmk
-    shield: cygnus_dongle pacman_adapter
+    shield: cygnus_dongle arcade_adapter
     snippet: cdc-acm-console
     cmake-args: -DCONFIG_USB_DEVICE_PRODUCT='"Cygnus"' -DCONFIG_USB_DEVICE_PID=0x615E
     artifact-name: cygnus_dongle
